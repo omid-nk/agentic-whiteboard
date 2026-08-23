@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-primary: oklch(54.6% 0.245 262.881);
+  --color-secondary: oklch(64.6% 0.222 41.116);
+  --color-dark: oklch(14.1% 0.005 285.823);
+  --color-light: oklch(98.5% 0 none);
+}

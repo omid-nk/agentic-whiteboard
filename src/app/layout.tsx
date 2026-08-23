@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="">
+      <body className="bg-light text-dark dark:bg-dark dark:text-light font-mono">
         {children}
         <ToastProvider />
       </body>
