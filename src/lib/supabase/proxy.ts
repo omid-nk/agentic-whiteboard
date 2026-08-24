@@ -32,7 +32,28 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  await supabase.auth.getClaims();
+  const { data } = await supabase.auth.getClaims();
+
+  const isAuthenticated = !!data?.claims;
+
+  const pathname = request.nextUrl.pathname;
+
+  const authRoutes = ["/login", "/register", "/reset-password"];
+
+  const isAuthRoute = authRoutes.includes(pathname);
+
+  const isDashboardRoute =
+    pathname === "/dashboard" || pathname.startsWith("/dashboard/");
+
+  // Logged-in users shouldn't access auth pages
+  if (isAuthenticated && isAuthRoute) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
+
+  // Unauthenticated users shouldn't access dashboard
+  if (!isAuthenticated && isDashboardRoute) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
 
   return response;
 }

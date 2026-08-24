@@ -30,10 +30,10 @@ export default function Header() {
 
       {/* actions */}
       <div className="flex items-center gap-6 text-sm [word-spacing:-4px]">
-        <Link href={"/login"}>Sign in</Link>
+        <Link href={"/login"}>Log in</Link>
 
         <Link
-          href={"/register"}
+          href={"/dashboard"}
           className="bg-dark hover:bg-dark/95 text-light hidden items-center gap-1.5 rounded-md px-3.5 py-2.5 font-bold lg:flex"
         >
           Open dashboard

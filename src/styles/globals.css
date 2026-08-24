@@ -10,3 +10,18 @@
   --color-dark: oklch(14.1% 0.005 285.823);
   --color-light: oklch(98.5% 0 none);
 }
+/* Disable browser autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--autofill-bg) inset !important;
+  -webkit-text-fill-color: oklch(14.1% 0.005 285.823) !important;
+  caret-color: oklch(14.1% 0.005 285.823) !important;
+  transition: background-color 9999s ease-out 0s;
+}
+
+/* Dark mode autofill */
+:root {
+  --autofill-bg: oklch(98.511% 0.00011 271.152 / 0);
+}

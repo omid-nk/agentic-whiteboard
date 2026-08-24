@@ -42,7 +42,7 @@ export default function Hero() {
               <LuArrowRight className="size-5" />
             </Link>
             <Link
-              href={"/register"}
+              href={"/dashboard"}
               className="bg-light text-dark hover:border-dark/40 border-dark/20 flex items-center gap-2 rounded-lg border px-3.5 py-2.5 text-sm font-bold shadow transition-all"
             >
               View workspace
